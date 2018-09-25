@@ -12,3 +12,24 @@ new Vue({
 			}
 		}
 });
+
+new Vue({
+	el: '#vue-app-events',
+	data: {
+		age: 28,
+		x:0,
+		y:0
+	},
+	methods: {
+		add: function(add){
+			this.age += add;
+		},
+		substract: function(less){
+			this.age -= less;
+		},
+		updateXY: function(event){
+			this.x = event.offsetX;
+			this.y = event.offsetY;
+		}
+	}
+});

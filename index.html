@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Vue Js Example<sub>Simple Html</sub></title>
+		<link href="style.css" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	</head>
 	<body>
@@ -8,6 +9,21 @@
 			<a v-bind:href="website">WebSite this guy</a>
 			<input type="text" v-bind:value="name">
 			<p v-html=websiteTag></p>
+		</div>
+
+		<div id="vue-app-events">
+			<h1>Events</h1>
+			<button @click="add(1)">+1 year</button>
+			<button v-on:click="substract(1)">less 1</button>
+			
+			<button @dblclick=add(10)>+10 year</button>
+			<button v-on:dblclick="substract(10)">less 10</button>
+
+			<p>Age: {{ age }}</p>
+
+			<div id="canvas" @:mousemove="updateXY">
+				{{x}},{{y}}
+			</div>
 		</div>
 		<script src="app.js"></script>
 	</body>
